@@ -1,16 +1,8 @@
-@font-face {
-    font-family: 'montserrat';
-    src:  url('myfont.woff2') format('woff2'),
-    url('myfont.woff') format('woff');
-}
 
-body {
-    font-family: 'Montserrat';
-
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .top_bar {
-    min-height:45px;
+    min-height: 45px;
     background-color: #001729;
 }
 
@@ -56,16 +48,15 @@ body {
 }
 
 /*AQUI EMPIEZAN LOS NUEVOS ESTILOS :)*/
-a{
-    color: #001729 ;
-    text-decoration: none
+a {
+    color: #001729;
+    text-decoration: none;
 }
 
-.navbar-nav{
+.navbar-nav {
     float: right;
     margin: 0;
 }
-
 
 /*PARA EL BACKGROUD O BANNER PRINCIPAL ES IMPORTANTE CONSERVAR ESTAS PROPIEDADES quitar padding*/
 .background-cover{
@@ -74,18 +65,25 @@ a{
     background-size: cover;
 }
 
+@font-face {
+    font-family: 'montserrat';
+    src:  url('myfont.woff2') format('woff2'),
+    url('myfont.woff') format('woff');
+}
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
-.Titulos-noticias-up{
+.Titulos-noticias-up {
     padding-top: 15px;
     font-size: 19px;
     font-weight: bold;
     text-align: center;
     color: #f56d61;
-
 }
 
-.Titulos-noticias{
+.Titulos-noticias {
     font-size: 24px;
     font-weight: bolder;
     text-align: center;

@@ -65,54 +65,40 @@
  * @ingroup themeable
  */
 #}
+<article{{ attributes }}>
 
-<div id="content" class="col-md-9 col-sm-9 col-xs-12 text-center">
-    <article{{ attributes }}>
+    {{ title_prefix }}
+    {% if not page %}
+        <h2{{ title_attributes }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+    {% endif %}
+    {{ title_suffix }}
 
-        {{ title_prefix }}
-        {% if not page %}
-            <h2{{ title_attributes }}>
-                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-        {% endif %}
-        {{ title_suffix }}
-
-        {% if display_submitted %}
-            <footer>
-                {{ author_picture }}
-                <div{{ author_attributes }}>
-                    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-                    {{ metadata }}
-                </div>
-            </footer>
-        {% endif %}
-
-        <div class="row">
-
-            <div class="col-md-2 text-center">
-                <img src="{{ file_url(node.field_image.entity.fileuri) }}" width="100px" height="100px" class="center-block" />
+    {% if display_submitted %}
+        <footer>
+            {{ author_picture }}
+            <div{{ author_attributes }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
             </div>
-            <div class="col-md-8">
-                <p class="text-center"> {{ node.field_fecha.value }}</p>
-                <p class="text-center"> {{ content.body }}</p>
-            </div>
-            <div class="col-md-2">
+        </footer>
+    {% endif %}
 
+    <div class="row">
 
-                {% for uri, item in node.field_link %}
-
-                    <a href="{{ item.uri }}" class="btn btn-warning btn-lg" role="button">{{ item.title }}</a>
-                {% endfor %}
-
-            </div>
-
-            {# {{ node.field_body.fieldDefinition.value }}  #}
-
-
+        <div class="col-md-2 text-center">
+            <img src="{{ file_url(node.field_image.entity.fileuri) }}" width="100px" height="100px" class="center-block" />
+        </div>
+        <div class="col-md-8">
+            <p class="text-center"> {{ node.field_fecha.value }}</p>
+            <p class="text-center"> {{ content.body }}</p>
         </div>
 
-    </article>
+        {# {{ node.field_body.fieldDefinition.value }}  #}
 
-</div>
 
+    </div>
+
+</article>
 
