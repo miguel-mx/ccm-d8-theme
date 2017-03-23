@@ -86,11 +86,8 @@
     {% endif %}
 
     <div class="row">
-
-        <div class="col-md-2 text-center">
-            <img src="{{ file_url(node.field_image.entity.fileuri) }}" width="100px" height="100px" class="center-block" />
-        </div>
         <div class="col-md-8">
+            <img src="{{ file_url(node.field_image.entity.fileuri) }}" />
             <p class="text-center"> {{ node.field_fecha.value }}</p>
             <p class="text-center"> {{ content.body }}</p>
         </div>

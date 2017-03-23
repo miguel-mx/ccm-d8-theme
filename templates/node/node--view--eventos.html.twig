@@ -66,16 +66,9 @@
  */
 #}
 
-<div id="content" class="col-md-8 col-sm-8 col-xs-12 text-center">
+<h1></h1>
+<div id="content" class="col-md-8 col-sm-8 col-xs-12">
     <article{{ attributes }}>
-
-        {{ title_prefix }}
-        {% if not page %}
-            <h2{{ title_attributes }}>
-                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-        {% endif %}
-        {{ title_suffix }}
 
         {% if display_submitted %}
             <footer>
@@ -88,27 +81,29 @@
         {% endif %}
 
         <div class="row">
+            <div class="col-md-6">
+                <img src="{{ file_url(node.field_image.entity.fileuri) }}" style="width: 100%;"/>
+            </div>
+            <div class="col-md-6">
+                {{ title_prefix }}
 
-            <div class="col-md-2 text-center">
-                <img src="{{ file_url(node.field_image.entity.fileuri) }}" width="100px" height="100px" class="center-block" />
-            </div>
-            <div class="col-md-8">
-                <p class="text-center"> {{ node.field_fecha.value }}</p>
-                <p class="text-center"> {{ content.body }}</p>
-            </div>
-            <div class="col-md-2">
+                {% if not page %}
+                    <h2 {{ title_attributes }}>
+                        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                    </h2>
+                {% endif %}
+                {{ title_suffix }}
+                {{ node.field_fecha.value }}
+                {{ content.body }}
+                <h4></h4>
                 {% for uri, item in node.field_link %}
-
                     <a href="{{ item.uri }}" class="btn btn-warning" role="button">{{ item.title }}</a>
                 {% endfor %}
             </div>
-
             {# {{ node.field_body.fieldDefinition.value }}  #}
-
         </div>
-
     </article>
-
+    <h1></h1><hr><h1></h1>
 </div>
 
 
