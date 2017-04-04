@@ -122,3 +122,30 @@ body {
 .areas img {
     padding: 10px;
 }
+
+.menu-lateral {
+    background: #001729;
+}
+
+.navbar-lateral {
+    background-color: #001729;
+    border-color: #080808;
+    color: white;
+}
+
+.navbar-lateral a {
+    color: #ccc;
+    font-size: 16px;
+    display: block;
+}
+
+.navbar-lateral a:hover, a:focus {
+    color: #3c3c3c;
+    text-decoration: underline;
+    background-color: #FFC946;
+}
+
+.navbar-lateral li {
+    display: block;
+    width: 100%;
+}
